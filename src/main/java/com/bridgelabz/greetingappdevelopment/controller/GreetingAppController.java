@@ -33,4 +33,13 @@ public class GreetingAppController {
         return greetingAppService.message();
 //  GET-->      http://localhost:8081/greeting4
     }
+
+    @GetMapping("/greeting5")
+    public String greetingMessage(
+            @RequestParam(value = "firstName", defaultValue = "Vaishnavi") String firstName,
+            @RequestParam(value = "lastName", defaultValue = "Vishwakarma") String lastName
+    ) {
+        return firstName + " " + lastName + greetingAppService.message();
+//  GET-->      http://localhost:8081/greeting5?firstName=Vaibhav&lastName=Ravindra
+    }
 }
