@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 //@Component
 public class GreetingAppService {
@@ -27,9 +29,9 @@ public class GreetingAppService {
         GreetingAppEntity greetingAppEntity = greetingAppRepository.findById(id).get();
         return greetingAppEntity;
     }
-//    public GreetingAppEntity greetingRepoMessage(GreetingAppDto greetingAppDto) {
-//        GreetingAppEntity greetingAppEntity = new GreetingAppEntity();
-//        greetingAppEntity.setMessage(greetingAppDto.getGreetingMessage());
-//        return greetingAppRepository.save(greetingAppEntity);
-//    }
+
+    public List<GreetingAppEntity> greetingAppEntityList() {
+        return greetingAppRepository.findAll();
+    }
+
 }

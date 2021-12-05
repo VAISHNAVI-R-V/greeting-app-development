@@ -6,6 +6,8 @@ import com.bridgelabz.greetingappdevelopment.service.GreetingAppService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class GreetingAppController {
 
@@ -58,6 +60,14 @@ public class GreetingAppController {
             @PathVariable int id
     ) {
         return greetingAppService.greetingMessageById(id);
-//  POST!, GET-->      http://localhost:8081/greeting/message/2
+//  POST-->         http://localhost:8081/greeting/message,
+//  GET-->          http://localhost:8081/greeting/message/2
+    }
+
+    @GetMapping("/greeting/message-list")
+    public List<GreetingAppEntity> greetingMessagesByList() {
+        return greetingAppService.greetingAppEntityList();
+//  POST-->     http://localhost:8081/greeting/message,
+//  GET-->      http://localhost:8081/greeting/message-list
     }
 }
