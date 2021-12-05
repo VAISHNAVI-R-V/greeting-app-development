@@ -67,7 +67,17 @@ public class GreetingAppController {
     @GetMapping("/greeting/message-list")
     public List<GreetingAppEntity> greetingMessagesByList() {
         return greetingAppService.greetingAppEntityList();
-//  POST-->     http://localhost:8081/greeting/message,
+//  POST-->     http://localhost:8081/greeting/message
 //  GET-->      http://localhost:8081/greeting/message-list
+    }
+
+    @PutMapping("/greeting/message-edit/{id}")
+    public GreetingAppEntity updateGreetingMessage(
+            @PathVariable int id,
+            @RequestBody GreetingAppDto greetingAppDto
+    ) {
+        return greetingAppService.updateGreetingMessageById(id, greetingAppDto);
+//  POST-->     http://localhost:8081/greeting/message
+//  PUT-->      http://localhost:8081/greeting/message-edit/1
     }
 }
