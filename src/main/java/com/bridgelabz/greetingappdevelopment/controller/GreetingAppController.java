@@ -52,4 +52,12 @@ public class GreetingAppController {
         return greetingAppService.addGreetingMessage(greetingAppDto);
 //  POST-->      http://localhost:8081/greeting/message
     }
+
+    @GetMapping("/greeting/message/{id}")
+    public GreetingAppEntity greetingMessageById(
+            @PathVariable int id
+    ) {
+        return greetingAppService.greetingMessageById(id);
+//  POST!, GET-->      http://localhost:8081/greeting/message/2
+    }
 }

@@ -22,6 +22,11 @@ public class GreetingAppService {
         greetingAppEntity.setContent(greetingAppDto.getContent());
         return greetingAppRepository.save(greetingAppEntity);
     }
+
+    public GreetingAppEntity greetingMessageById(int id) {
+        GreetingAppEntity greetingAppEntity = greetingAppRepository.findById(id).get();
+        return greetingAppEntity;
+    }
 //    public GreetingAppEntity greetingRepoMessage(GreetingAppDto greetingAppDto) {
 //        GreetingAppEntity greetingAppEntity = new GreetingAppEntity();
 //        greetingAppEntity.setMessage(greetingAppDto.getGreetingMessage());

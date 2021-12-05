@@ -12,5 +12,4 @@ public class GreetingAppEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String content;
-
 }
