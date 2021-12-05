@@ -80,4 +80,13 @@ public class GreetingAppController {
 //  POST-->     http://localhost:8081/greeting/message
 //  PUT-->      http://localhost:8081/greeting/message-edit/1
     }
+
+    @DeleteMapping("/greeting/message-delete/{id}")
+    public GreetingAppEntity deleteGreetingMessage(
+            @PathVariable int id
+    ) {
+        return greetingAppService.deleteGreetingMessage(id);
+//  POST-->     http://localhost:8081/greeting/message
+//  DELETE-->      http://localhost:8081/greeting/message-delete/1
+    }
 }

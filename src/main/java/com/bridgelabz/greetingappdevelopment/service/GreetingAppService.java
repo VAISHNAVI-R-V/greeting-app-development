@@ -39,5 +39,10 @@ public class GreetingAppService {
         greetingAppEntity.setContent(greetingAppDto.getContent());
         return greetingAppRepository.save(greetingAppEntity);
     }
- 
+
+    public GreetingAppEntity deleteGreetingMessage(int id) {
+        GreetingAppEntity greetingAppEntity = greetingAppRepository.findById(id).get();
+        greetingAppRepository.delete(greetingAppEntity);
+        return greetingAppEntity;
+    }
 }
